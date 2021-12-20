@@ -1,0 +1,10 @@
+python
+java
+javascript
+reactjs
+golang
+html
+Spring Boot
+Node Js
+SQL
+tally
