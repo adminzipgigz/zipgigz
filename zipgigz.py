@@ -9,11 +9,12 @@ import csv
 
 csv_file = open('Naukri_scrape.csv', 'a', encoding="utf-8", newline='')
 csv_writer = csv.writer(csv_file)
-csv_writer.writerow(['Title','Company','Experience','Salary','Location','URL'])
+csv_writer.writerow(['Title','Company',"Skills",'Experience','Salary','Location','URL'])
 
 
 # default exp value
 # can be
+
 min_exp = '0'
 max_exp = '5'
 
@@ -21,12 +22,16 @@ max_exp = '5'
 with open("skills.txt") as file: 
     for skills in file:
         
-        no_of_jobs = 5
+        # num of jobs to be scrapped
+        skill = skills.rstrip('\n')
+        no_of_jobs = 0
+
         page_num = 1
+        
         flag = True
         while(flag):
 
-            url = r"https://www.naukri.com/" + skills + "-jobs-"+str(page_num)
+            url = r"https://www.naukri.com/" + skill + "-jobs-"+str(page_num)
             page_num += 1
             page = requests.get(url)
 
@@ -86,7 +91,7 @@ with open("skills.txt") as file:
                     Location = Loc_exp.text
 
                 no_of_jobs += 1
-                csv_writer.writerow([Title, Company, Experience, sal, Location,URL])
+                csv_writer.writerow([Title, Company,skill, Experience, sal, Location,URL])
                 if(no_of_jobs == 10):
                     flag = False
                     break

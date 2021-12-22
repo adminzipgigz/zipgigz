@@ -1,10 +1,10 @@
-python
-java
-javascript
-reactjs
-golang
-html
-Spring Boot
-Node Js
+Python
+Java
+Javascript
+React Js
+Golang
+Angular Js
+React Native
 SQL
-tally
+Tally
+HTML
