@@ -7,7 +7,7 @@ import requests
 import csv
 
 
-csv_file = open('Naukri_scrape.csv', 'a', encoding="utf-8", newline='')
+csv_file = open('Output_22_DEC.csv', 'a', encoding="utf-8", newline='')
 csv_writer = csv.writer(csv_file)
 csv_writer.writerow(['Title','Company',"Skills",'Experience','Salary','Location','URL'])
 
